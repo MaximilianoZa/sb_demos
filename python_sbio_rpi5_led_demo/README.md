@@ -4,6 +4,9 @@
 This project provides a basic Python extension that wraps the Storyboard IO (SBIO) library, facilitating seamless integration of SBIO C libraries with Python code. It is compatible with Storyboard 8.1 and Python 3.11. The backend code is designed to be built on-target, assuming a pre-installed Python environment on the platform. The idea of the demo is to demonstrate how to seamlessly integrate SBIO C libraries within Python code, allowing for straightforward communication between the Storyboard application and Python, in this example we are communicating particularly with the GPIOs.
 Note: This project does not include the Storyboard Runtime engine. The runtime engine can be found in the installation path of Storyboard.
 
+## Connection diagram:
+![alt text](https://github.com/MaximilianoZa/sb_demos/blob/main/python_sbio_rpi5_led_demo/Connection_diagram.png?raw+true)
+
 ## Package contents:
 - **frontend/**
   - **sb_led_blink_app/**: SB front end app
