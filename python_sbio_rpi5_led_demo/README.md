@@ -2,6 +2,7 @@
 
 ## Overview:
 This project provides a basic Python extension that wraps the Storyboard IO (SBIO) library, facilitating seamless integration of SBIO C libraries with Python code. It is compatible with Storyboard 8.1 and Python 3.11. The backend code is designed to be built on-target, assuming a pre-installed Python environment on the platform. The idea of the demo is to demonstrate how to seamlessly integrate SBIO C libraries within Python code, allowing for straightforward communication between the Storyboard application and Python, in this example we are communicating particularly with the GPIOs.
+Note: This project does not include the Storyboard Runtime engine. The runtime engine can be found in the installation path of Storyboard.
 
 ## Package contents:
 - **frontend/**
@@ -18,9 +19,9 @@ This project provides a basic Python extension that wraps the Storyboard IO (SBI
 ## How to build:
 The `setup.py` file has paths to the target Storyboard runtime and may need to be adjusted depending on source location in the target filesystem. Modify the `incdirs` and `libdirs` paths as required.
 
-```python
-incdirs = '/home/pi/crank/runtimes/linux-raspberry-aarch64-opengles_2.0-drm-obj/include'
-libdirs = '/home/pi/crank/runtimes/linux-raspberry-aarch64-opengles_2.0-drm-obj/lib'
+`incdirs = '/home/pi/crank/runtimes/linux-raspberry-aarch64-opengles_2.0-drm-obj/include'`
+
+`libdirs = '/home/pi/crank/runtimes/linux-raspberry-aarch64-opengles_2.0-drm-obj/lib'`
 
 To build and install the Python extension on a Linux system use the following:
 sudo python3 setup.py install
@@ -32,26 +33,26 @@ If you are familiar with Storyboard IO, the usage of this extension should be fa
 
 The extension uses python dicts to represent messages, so the send_event function takes a dict as a parameter, and the receive_event function returns a dict to the caller. The format of the event dict is as follows:
 
-{
+`{
 	'event_name': {
 		... (event data)
 	}
-}
+}`
 
 For example, an event named "sample.event" with a payload of a uint16_t named 'number' and a string named 'text' would be represented by the extension as:
 
-{
+`{
 	'sample.event': {
 		'2u1:number': 5,
 		'1s0:text': 'Hello, world!'
 	}
-}
+}`
 
 An event that does not have a payload is represented specifically with 'None' for the payload:
 
-{
+`{
 	'sample.event': None
-}
+}`
 
 ## Caveats
 - Currently, this extension does not support events containing arrays of types (for example, `4s2` for an array of `int32_t` of size two).
@@ -59,19 +60,19 @@ An event that does not have a payload is represented specifically with 'None' fo
 
 ## API listing
 
-### `sbio.send_event(channel, target, event)`
+## `sbio.send_event(channel, target, event)`
 - `channel`: The SBIO channel to send the event on
 - `target`: The target of the event, or you can specify "-" if there is no specific target
 - `event`: A Python dict representing a SBIO event
 
 This function sends an SBIO event on a specified SBIO channel.
 
-### `sbio.receive_event(channel)`
+## `sbio.receive_event(channel)`
 - `channel`: The SBIO channel to receive an event on
 
 This function will create a receive handle for the specified channel if one does not exist, and wait for events on that channel. When an event is received, it will return the event to the caller as a Python dict.
 
-### `sbio.close_receive_channel(channel)`
+## `sbio.close_receive_channel(channel)`
 - `channel`: The SBIO channel to close
 
 This function closes an existing SBIO channel.
