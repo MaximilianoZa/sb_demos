@@ -23,15 +23,22 @@ We welcome contributions from the community! If you have a demo that showcases S
 
 If you encounter any issues or have questions about the demos, please contact [Crank Software Support](https://support.cranksoftware.com/hc/en-us/requests/new).
 
-## MIT License
+## Modified MIT License
 
 Copyright (c) 2024 Crank Software
 
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files, subject to the following conditions:
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software code and associated documentation files in this repository, to deal
+in the Software with the following conditions:
 
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+1. The closed-source components of this software, namely Storyboard IDE and Storyboard Runtime Engines, are not covered by this license and may have separate terms and conditions.
 
-The Software may not be modified, merged, published, distributed, sublicensed, and/or sold without explicit written permission from Crank Software.
+2. Redistributions of source code of the open-source components must retain the above copyright notice, this list of conditions and the following disclaimer.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
-IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+3. Redistributions in binary form of the open-source components must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+
+4. Redistributions or use of the closed-source components are subject to the terms and conditions specified by Crank Software.
+
+5. Neither the name of the Crank Software nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
+
+THE OPEN-SOURCE COMPONENTS OF THE SOFTWARE ARE PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE OPEN-SOURCE COMPONENTS OR THE USE OR OTHER DEALINGS IN THE OPEN-SOURCE COMPONENTS OF THE SOFTWARE.
