@@ -1,6 +1,6 @@
 # Creating and Running Your Crank Container
 
-## Overview
+## OVERVIEW
 
 This guide highlights the process of creating a Crank container, a Docker container that packages a Storyboard application for deployment on your target device. For this example, we will utilize Weston as the Wayland compositor. Specifically, we will use a Weston container to manage the graphical stack, leveraging GPU acceleration and simplifying the development process.
 
