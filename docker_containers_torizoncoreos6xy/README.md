@@ -65,15 +65,20 @@ Notes:
 - Note3: Torizon OS 6 command references to run Weston container on different platforms: <https://developer.toradex.com/torizon/application-development/use-cases/gui/web-browser-kiosk-mode-with-torizoncore/>
 
 After successfully launching your weston container you should see a grey screen (may be blue or different color depending on the container you are using) that looks like this:
- 
-if you run docker -ps you should see the container with the status “Up”:
- 
-notes: 
-•	Note1: To enter your container you can use this command: 	
-docker exec -t -i [ContainerID] /bin/bash 
-•	Note2: To check Weston Information, you can run:	
-weston --version	
+
+![alt text](https://github.com/MaximilianoZa/sb_demos/blob/main/docker_containers_torizoncoreos6xy/images/weston_container_up.png?raw=true)
+
+
+if you run docker `-ps` you should see the container with the status `Up`:
+
+Notes: 
+- Note1: To enter your container you can use this command: 	
+`docker exec -t -i [ContainerID] /bin/bash`
+- Note2: To check Weston Information, you can run:	
+`weston --version`
 weston-info
-•	Note3: Find your weston.ini configuration with this command:	
-find / -name *weston.ini*
-•	Note4: To edit the weston.ini file you probably must copy it outside the container first, edit it and copy it back inside.
+- Note3: Find your weston.ini configuration with this command:	
+`find / -name *weston.ini*`
+- Note4: To edit the weston.ini file you probably must copy it outside the container first, edit it and copy it back inside.
+
+
