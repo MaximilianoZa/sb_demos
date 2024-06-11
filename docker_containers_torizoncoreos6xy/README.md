@@ -71,6 +71,8 @@ After successfully launching your weston container you should see a grey screen 
 
 if you run docker `-ps` you should see the container with the status `Up`:
 
+![alt text](https://github.com/MaximilianoZa/sb_demos/blob/main/docker_containers_torizoncoreos6xy/images/weston_container_ps_up.PNG?raw=true)
+
 Notes: 
 - Note1: To enter your container you can use this command: 	
 `docker exec -t -i [ContainerID] /bin/bash`
