@@ -20,4 +20,4 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
-**The closed-source components of this software, namely Storyboard IDE and Storyboard Runtime Engines, are not covered by this license and may have separate terms and conditions.**
+**The closed-source components of Storyboard are not covered by this license and have separate terms and conditions.**
