@@ -83,4 +83,70 @@ weston-info
 `find / -name *weston.ini*`
 - Note4: To edit the weston.ini file you probably must copy it outside the container first, edit it and copy it back inside.
 
+## BUILDING YOUR CRANK CONTAINER
+We have created several Visual Studio Code projects than you can build on your PC. Here is an example of how the projects structure looks like:
+
+![alt text](https://github.com/MaximilianoZa/sb_demos/blob/main/docker_containers_torizoncoreos6xy/images/project_structure.png?raw=true)
+
+-	*apps*: Here you can place your application. We have packed some already
+-	*runtimes*: This is a place holder for you to place the sbengine suitable for your device
+-	*docker_sbengine.sh*: This is the launching script and should be edited to match your paths and project requirements.
+-	*Dockerfile*: To build your docker image
+
+
+### APPS: EXPORTING YOUR SB APPLICATION
+There are four components that will be part of your container. The first one is your Storyboard application. We have packed some samples already.
+Eventually, you will create your own application. For quick testing you can also select a different sample demo from the demos that we ship within Storyboard (File>>import>>Storyboard Development>>Storyboard Sample) or alternatively, as we did for this projects, you can grab one demo app from our repository: 
+<https://github.com/crank-software/storyboard-demos>
+Once you open your project in Storyboard, from the Storyboard Application Export Configuration window you can choose gapp packager, Filesystem transfer method and export your project to the apps directory.
+
+![alt text](https://github.com/MaximilianoZa/sb_demos/blob/main/docker_containers_torizoncoreos6xy/images/sb_project_export.png?raw=true)
+
+### RUNTIMES: EXPORTING YOUR SB ENGINE
+The second bit is straightforward coping the runtime engine from the storyboard installation path to the runtimes directory created in the Visual Studio Code project.
+Example, for the IMX8 you would use the linux-imx8yocto-armle-opengles_2.0-wayland-obj runtime:
+
+![alt text](https://github.com/MaximilianoZa/sb_demos/blob/main/docker_containers_torizoncoreos6xy/images/sb_engine_selection.PNG?raw=true)
+
+### DOCKER_SBENGINE.SH: EDITING THE LAUNCHING SCRIPT
+The third step consists of, if necessary, editing and adapting the lunch script to your system needs.
+On the one we have written and packed, the workflow goes as this: after the container is launched, we look into the scp folder first, and if we don't find a .gapp file there we launch the "default" application which is the one we have packed on the apps folder. This will allow you to run a different application if you want to by simply deploying another app to the scp directory, rather that rebuilding the container.
+
+Notes:
+-	Note1: Options that you can pass to the engine: <https://support.cranksoftware.com/hc/en-us/articles/360056945652-Storyboard-Engine-Plugin-Options> 
+-	Note2: The path for the Wayland libraries as well as the for the XDG_RUNTIME_DIR and WAYLAND_DISPLAY variables and the mapping of the touch events may differ on your target device, so you need to inspect your base container. After you launch the base container, you may want to open it and look inside using this command: 
+`docker exec -t -i [ContainerID] /bin/bash `
+-	Note3: if you are working on a windows machine, you may need to modify the line ending of your script to properly crosscompile since windows ends lines with \r\n whereas Linux does it with \n. A quick way of doing that would be using the Replace function in Notepad++
+
+### DOCKERFILE: BUILDING AND RUNNING
+The four and last part is to, if necessary, edit the dockerfile, and build the project:
+
+To build you can use something like this:
+
+#build
+`docker build -t crank_imx8_sb_8_1_weston-vivante_2 v:0.1 .`
+
+#tag
+`docker tag crank_imx8_sb_8_1_weston-vivante_2 cranksoftware/crank_imx8_sb_8_1_weston-vivante_2:v0.1`
+
+#push
+`docker push cranksoftware/crank_imx8_sb_8_1_weston-vivante_2:v0.1`
+
+Here is the docker hub link to some of our projects <https://hub.docker.com/u/cranksoftware>
+
+Notes:
+-	Note1: When you copy the engine, some of the binary files have read and write permission only, but they need to be executable as well in Linux. If you were working on a Linux machine and deploy to a Linux target these permissions will be transfer as set on the host machine, if you otherwise use Windows you will need to explicitly force it using --chmod=777 
+-	Note2: to use the --chmod=777 in Windows you need to explicitly configure Docker Engine by setting the buildkit to false:
+`"features": { "buildkit": false } `
+
+
+
+
+
+
+
+
+
+
+
 
