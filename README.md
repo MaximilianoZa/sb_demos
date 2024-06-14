@@ -1,6 +1,6 @@
 # Crank Software Integration Demos Repository
 
-Welcome to the Crank Software Integration Demos Repository! This repository is dedicated to showcasing various demos that illustrate how Crank Software integrates seamlessly with a range of external tools to enhance functionality and provide robust solutions.
+Welcome to the Crank Software Integration Demos Repository! This repository is dedicated to showcasing various demos that illustrate how Crank Software integrates seamlessly with a range of external tools to enhance functionality and provide robust solutions. The repository is organized with submodules separated by categories, ensuring easy navigation and a structured approach to exploring our diverse integration capabilities. If users want to download a particular project, they can refer to the separate repo; otherwise, to get all the projects, they can perform a recursive pull.
 
 ## Overview
 
