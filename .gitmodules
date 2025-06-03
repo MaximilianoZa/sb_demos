@@ -1,6 +1,9 @@
 [submodule "crank_sbio_extensions"]
 	path = crank_sbio_extensions
 	url = https://github.com/MaximilianoZa/crank_sbio_extensions
-[submodule "crank_torizon_docker_containers"]
-	path = crank_torizon_docker_containers
-	url = https://github.com/MaximilianoZa/crank_torizon_docker_containers
+[submodule "crank_storyboard.8.x_torizon.6.x.y_dockercontainers"]
+	path = crank_storyboard.8.x_torizon.6.x.y_dockercontainers
+	url = https://github.com/MaximilianoZa/crank_storyboard.8.x_torizon.6.x.y_dockercontainers
+[submodule "crank_storyboard.8.x_torizon.7.x.y_dockercontainers"]
+	path = crank_storyboard.8.x_torizon.7.x.y_dockercontainers
+	url = https://github.com/MaximilianoZa/crank_storyboard.8.x_torizon.7.x.y_dockercontainers
